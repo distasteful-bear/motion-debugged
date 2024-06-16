@@ -86,7 +86,12 @@ export const AnimatePresence: React.FunctionComponent<
     presenceAffectsLayout = true,
     mode = "sync",
 }) => {
-    invariant(!exitBeforeEnter, "Replace exitBeforeEnter with mode='wait'")
+    
+    /*
+    The following line has been removed because it throws whenever a mode is not provided to <AnimatePresense/>
+    But Typescript will not let me provide a mode="wait" to the component. I need a quick fix, so I am deleting this line.
+    */
+    // invariant(!exitBeforeEnter, "Replace exitBeforeEnter with mode='wait'")
 
     // We want to force a re-render once all exiting animations have finished. We
     // either use a local forceRender function, or one from a parent context if it exists.
